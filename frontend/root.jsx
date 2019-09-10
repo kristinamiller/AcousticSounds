@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 
 
-const Root = () => (
-  <Provider>
+const Root = ({ store }) => (
+  <Provider store={store}>
     <HashRouter>
       <App />
     </HashRouter>
