@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 
 export default () => (
   <div>
+    
     <Route exact path="/" component={Home} />
     <Route path="/signup" component={SignupContainer} />
 
