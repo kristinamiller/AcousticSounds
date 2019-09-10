@@ -9,7 +9,22 @@ import * as sessionActions from './actions/session_actions';
 import App from './components/app';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
+  let store;
+
+  if (window.currentUser) {
+    const preloadedState = {
+      session: { id: window.currentUser.id },
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      }
+    }
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+
+  
 
   window.signup = sessionActions.signup;
   window.login = sessionActions.login;
