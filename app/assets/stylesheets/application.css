@@ -41,7 +41,9 @@ time, mark, audio, video {
 
  body {
    background: #405FC7;
-   font-family: 'Helvetica'
+   font-family: 'Helvetica';
+   color: white;
+   margin: 10%;
  }
 
   .login-form-container {
