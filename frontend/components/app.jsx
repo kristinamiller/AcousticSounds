@@ -10,7 +10,7 @@ const App = () => (
   <div>
     {/* <Modal /> */}
     <header>
-      <h1>Acoustic Sounds</h1>
+      <h1 className="logo-text">AcousticSounds</h1>
       {/* <GreetingContainer /> */}
     </header>
     <Switch>

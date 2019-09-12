@@ -24,7 +24,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, a {
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,10 +40,10 @@ time, mark, audio, video {
 }
 
  body {
-   background: #405FC7;
+   background: black;
    font-family: 'Helvetica';
    color: white;
-   margin: 10%;
+   margin: 5%;
  }
 
   .login-form-container {
@@ -67,3 +67,19 @@ time, mark, audio, video {
    outline: 1px solid black;
    padding: 20px;
  }
+
+ button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.home-component {
+  padding: 30px;
+  background: url('priscilla-du-preez-de-HbaYzZqA-unsplash.jpg');
+  height: 400px;
+  background-size: cover;
+}
+
+.logo-text {
+  font-size: 36px;
+}

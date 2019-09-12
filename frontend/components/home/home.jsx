@@ -5,10 +5,10 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="home-component">
         <GreetingContainer />
-        <h1>I am the Home Component</h1>
-        
+        <h1>Listen to better music</h1>
+
       </div>
 
     )
