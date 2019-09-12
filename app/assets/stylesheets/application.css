@@ -14,30 +14,6 @@
  *= require_self
  */
 
- html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video, a {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-  text-decoration: inherit;
-  vertical-align: inherit;
-  box-sizing: inherit;
-  background: transparent;
-}
 
  body {
    background: black;
@@ -75,7 +51,7 @@ input[type="submit"] {
 
 .home-component {
   padding: 30px;
-  background: url('priscilla-du-preez-de-HbaYzZqA-unsplash.jpg');
+  /* background: url('priscilla-du-preez-de-HbaYzZqA-unsplash.jpg'); */
   height: 600px;
   background-size: cover;
 }
@@ -83,8 +59,6 @@ input[type="submit"] {
 
 .nav-bar {
   background-color: #30303C;
-  border: 5px solid #30303C ;
-  border-style: outset;
   display: flex;
   justify-content: space-between;
 }
@@ -92,6 +66,7 @@ input[type="submit"] {
 .nav-items-left {
   display: flex;
   justify-content: space-between;
+  border-right: 1px solid black;
 }
 .nav-items-right {
   display: flex;
@@ -99,5 +74,20 @@ input[type="submit"] {
 }
 
 .nav-link {
-  padding: 10px;
+  padding: 10px 20px 10px 20px;
+  border-left: 1px solid black;
+}
+
+.nav-link:hover {
+  background: rgb(66, 66, 83);
+  
+}
+
+.logo-text {
+  background: #531699;
+}
+
+.logo-text:hover {
+  background: #6735a0;
+  
 }
