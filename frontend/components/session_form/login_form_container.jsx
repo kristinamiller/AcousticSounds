@@ -15,6 +15,12 @@ const msp = ({ errors }) => {
 const mdp = dispatch => {
   return {
     processForm: (user) => dispatch(login(user)),
+    otherForm: (
+      <button onClick={() => dispatch(openModal('signup'))}>
+        Create account
+      </button>
+    ),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

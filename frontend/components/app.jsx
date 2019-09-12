@@ -5,13 +5,14 @@ import { Route, Switch } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import Home from './home/home';
+import Modal from './modal/modal';
 
 const App = () => (
   <div>
     {/* <Modal /> */}
     <header>
-      <h1 className="logo-text">AcousticSounds</h1>
-      {/* <GreetingContainer /> */}
+      
+      <GreetingContainer />
     </header>
     <Switch>
       <Route exact path="/" component={Home}/>

@@ -41,9 +41,9 @@ time, mark, audio, video, a {
 
  body {
    background: black;
-   font-family: 'Helvetica';
+   font-family: 'Lucida Grande', sans-serif;
    color: white;
-   margin: 5%;
+   margin: 5px 0px 5px 0px;
  }
 
   .login-form-container {
@@ -76,10 +76,28 @@ input[type="submit"] {
 .home-component {
   padding: 30px;
   background: url('priscilla-du-preez-de-HbaYzZqA-unsplash.jpg');
-  height: 400px;
+  height: 600px;
   background-size: cover;
 }
 
-.logo-text {
-  font-size: 36px;
+
+.nav-bar {
+  background-color: #30303C;
+  border: 5px solid #30303C ;
+  border-style: outset;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-items-left {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-items-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-link {
+  padding: 10px;
 }

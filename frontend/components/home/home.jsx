@@ -6,7 +6,7 @@ class Home extends React.Component {
   render() {
     return(
       <div className="home-component">
-        <GreetingContainer />
+        {/* <GreetingContainer /> */}
         <h1>Listen to better music</h1>
 
       </div>

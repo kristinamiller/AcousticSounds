@@ -4,11 +4,29 @@ import { Link } from 'react-router-dom';
 const Greeting = ({ currentUser, logout }) => {
   // debugger
   const sessionLinks = () => (
-    <nav className="login-signup">
-      <Link to="/login">Login</Link>
-      <br/>
-      <Link to="/signup">Sign up!</Link>
-    </nav>
+    <div>
+      <div className="nav-bar">
+        <div className="nav-items-left">
+          <div className="nav-link">
+            <Link to="/">AcousticSounds</Link>
+          </div>
+          <div className="nav-link">
+            <Link to="/">Home</Link>
+          </div>
+        </div>
+        <div className="nav-items-right">
+          <div className="nav-link">
+            <button onClick={() => openModal('login')}>Sign In</button>
+          </div>
+          <div className="nav-link">
+            <button onClick={() => openModal('signup')}>Create account</button>
+          </div>
+        </div>
+      </div>
+      {/* <div>
+        <button>Start uploading today</button>
+      </div> */}
+    </div>
   );
   const personalGreeting = () => (
     <hgroup>
