@@ -11,17 +11,12 @@ class SessionForm extends React.Component {
     this.handleEmail = this.handleEmail.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
     this.demoUser = this.demoUser.bind(this);
-    // this.openLoginModal = this.openModal
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => {
-      this.props.history.push('/');
-      this.props.closeModal();
-    }
-    )
+    this.props.processForm(user).then(() => this.props.closeModal())
   }
 
   handleEmail(e) {
@@ -36,7 +31,7 @@ class SessionForm extends React.Component {
     return (
       <button className="demo-user" onClick={(e) => {
         e.preventDefault()
-        return this.props.loginUser(demoUser)
+        return this.props.loginUser(demoUser).then(this.props.closeModal())
       }}>Sign In as Demo User</button>
     )
   }
