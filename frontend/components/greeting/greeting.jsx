@@ -39,7 +39,7 @@ class Greeting extends React.Component {
         <button onClick={this.props.logout}>Log Out</button>
       </hgroup>
     )
-      console.log(this.props)
+
     return(
       <div>
        { this.props.currentUser ? personalGreeting() : sessionLinks()}

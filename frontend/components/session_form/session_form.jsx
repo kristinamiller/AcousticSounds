@@ -17,7 +17,9 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push('/'));
+    this.props.processForm(user).then(() => this.props.history.push('/')).then(
+      this.props.closeModal()
+    )
   }
 
   handleEmail(e) {
@@ -47,6 +49,11 @@ class SessionForm extends React.Component {
         ))}
       </ul>
     )
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
+    
   }
 
 
@@ -81,16 +88,7 @@ class SessionForm extends React.Component {
             <div className="session-form-or">
               {this.props.formType === 'Sign In' ? "Don't have an account?" : "Already have an account?"}
             </div>
-            <div>
               {this.props.otherForm}
-            </div>
-
-
-            {/* <button 
-              onClick={this.props.formType === 'Sign In' ? () => this.openModal('signup') : () => this.openModal('login')}
-              className="login-submit">
-              {this.props.formType === 'Sign In' ? "Create an account" : "Sign In"}
-              </button> */}
           </div>
         </form>
       </div>  
