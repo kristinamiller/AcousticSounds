@@ -19,7 +19,8 @@
    background: white;
    font-family: 'Lucida Grande', sans-serif;
    color: black;
-   margin: 5px 0px 5px 0px;
+  //  margin-left: 5%;
+  //  margin-right: 5%;
  }
 
 
@@ -27,6 +28,7 @@
  button,
 input[type="submit"] {
   cursor: pointer;
+  
 }
 
 .home-component {
@@ -37,38 +39,3 @@ input[type="submit"] {
 }
 
 
-.nav-bar {
-  background-color: #30303C;
-  display: flex;
-  justify-content: space-between;
-  color: white;
-}
-
-.nav-items-left {
-  display: flex;
-  justify-content: space-between;
-  border-right: 1px solid black;
-}
-.nav-items-right {
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-link {
-  padding: 10px 20px 10px 20px;
-  border-left: 1px solid black;
-}
-
-.nav-link:hover {
-  background: rgb(66, 66, 83);
-  
-}
-
-.logo-text {
-  background: #531699;
-}
-
-.logo-text:hover {
-  background: #6735a0;
-  
-}

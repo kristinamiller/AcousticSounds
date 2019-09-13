@@ -1,0 +1,65 @@
+.nav-bar {
+  background-color: #30303C;
+  display: flex;
+  justify-content: space-between;
+  color: #e5e5e5;
+  font-size: 14px;
+}
+
+.nav-items-left {
+  display: flex;
+  justify-content: space-between;
+  border-right: 1px solid black;
+  align-items: center;
+}
+.nav-items-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 15px 20px 15px 20px;
+  border-left: 1px solid black;
+}
+
+.nav-link:hover {
+  
+  color: white;
+}
+
+.logo-text {
+  background: #531699;
+  background: -webkit-linear-gradient(#8871a3, #531699);
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+.logo-text:hover {
+  background: #6735a0;
+}
+
+.sign-in {
+  border: 1px solid #e5e5e5; 
+  padding: 4px 12px 4px 12px;
+  border-radius: 4px;
+}
+
+.create-account {
+  border: 1px solid #531699; 
+  padding: 5px 15px 5px 15px;
+  border-radius: 4px;
+  background: #531699;
+  margin: 5px 30px 5px 20px;
+}
+
+.sign-in:hover {
+  
+  color: white;
+}
+
+.create-account:hover {
+  
+  color: white;
+}

@@ -7,7 +7,7 @@ class Home extends React.Component {
     return(
       <div className="home-component">
         {/* <GreetingContainer /> */}
-        <h1>Listen to better music</h1>
+        <h1></h1>
 
       </div>
 

@@ -20,13 +20,19 @@ class Greeting extends React.Component {
             <div className="nav-link">
               <Link to="/">Home</Link>
             </div>
-          </div>
-          <div className="nav-items-right">
             <div className="nav-link">
-              <button onClick={() => this.openModal('login')}>Sign In</button>
+              <Link to="/">Stream</Link>
             </div>
             <div className="nav-link">
-              <button onClick={() => this.openModal('signup')}>Create account</button>
+              <Link to="/">Library</Link>
+            </div>
+          </div>
+          <div className="nav-items-right">
+            <div>
+              <button className="sign-in" onClick={() => this.openModal('login')}>Sign In</button>
+            </div>
+            <div>
+              <button className="create-account" onClick={() => this.openModal('signup')}>Create account</button>
             </div>
           </div>
         </div>
