@@ -10,7 +10,7 @@
 
 .modal-child {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
@@ -28,8 +28,10 @@
    display: flex;
    justify-content: center;
    flex-direction: column;
-   padding: 20px;
+   padding: 10px;
   line-height: 24px;
+  width: 350px;
+  height: 400px;
  }
 
  .login-input {
@@ -39,7 +41,7 @@
    border: 1px solid lightgray;
    border-radius: 5px;
    font-size: 18px;
-   margin: 10px 0px 10px 0px;
+   margin: 5px 0px 5px 0px;
  }
 
  .login-form-box {
@@ -50,7 +52,7 @@
 .login-submit, .demo-user {
   /* display: inline-block; */
   border-radius: 4px;
-  padding: 5px;
+  padding: 7px;
   text-align: center;
   background: #531699;
   color: white;
@@ -68,4 +70,11 @@
 
 .session-form-or {
   text-align: center;
+  padding: 20px 0px 5px 0px;
+}
+
+.login-errors {
+  color: red;
+  padding: 5px;
+  margin: 5px;
 }

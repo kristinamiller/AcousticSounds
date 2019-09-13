@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     this.handleEmail = this.handleEmail.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
     this.demoUser = this.demoUser.bind(this);
+    // this.openLoginModal = this.openModal
   }
 
   handleSubmit(e) {
@@ -31,8 +32,8 @@ class SessionForm extends React.Component {
     return (
       <button className="demo-user" onClick={(e) => {
         e.preventDefault()
-        return this.props.processForm(demoUser)
-      }}>Log In as Demo User</button>
+        return this.props.loginUser(demoUser)
+      }}>Sign In as Demo User</button>
     )
   }
   
@@ -56,9 +57,9 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           
           <div className="login-form">
-            {this.props.formType === 'Log In' ? this.demoUser() : null}
+            {this.demoUser()}
             {/* <h3>{this.props.formType}</h3> */}
-            <h3>{this.renderErrors()}</h3>
+            <h3 className="login-errors">{this.renderErrors()}</h3>
             <br/>
               <input 
                 type="text"
@@ -77,10 +78,19 @@ class SessionForm extends React.Component {
             <br/>
             <input type="submit" value={this.props.formType} 
             className="login-submit"/>
-            <div className="session-form-or">or</div>
-            <button onClick={this.props.formType === 'Log In' ? () => this.openModal('signup') : () => this.openModal('login')} className="login-submit">
-              {this.props.formType === 'Log In' ? "Create an account" : "Log In"}
-              </button>
+            <div className="session-form-or">
+              {this.props.formType === 'Sign In' ? "Don't have an account?" : "Already have an account?"}
+            </div>
+            <div>
+              {this.props.otherForm}
+            </div>
+
+
+            {/* <button 
+              onClick={this.props.formType === 'Sign In' ? () => this.openModal('signup') : () => this.openModal('login')}
+              className="login-submit">
+              {this.props.formType === 'Sign In' ? "Create an account" : "Sign In"}
+              </button> */}
           </div>
         </form>
       </div>  
