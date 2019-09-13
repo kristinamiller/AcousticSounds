@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
       <button className="demo-user" onClick={(e) => {
         e.preventDefault()
         return this.props.processForm(demoUser)
-      }}>Demo Login</button>
+      }}>Log In as Demo User</button>
     )
   }
   
@@ -56,33 +56,31 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           
           <div className="login-form">
-            <h3>Please {this.props.formType}</h3>
+            {this.props.formType === 'Log In' ? this.demoUser() : null}
+            {/* <h3>{this.props.formType}</h3> */}
             <h3>{this.renderErrors()}</h3>
             <br/>
-            <label>
-              Email:
               <input 
                 type="text"
                 value={this.state.email}
                 onChange={this.handleEmail}
                 className="login-input"
+                placeholder="Email"
                 />
-            </label>
-            <br/>
-            <br/>
-            <label>
-              Password:
               <input 
                 type="password"
                 value={this.state.password}
                 onChange={this.handlePassword}
                 className="login-input"
+                placeholder="Password"
                 />
-            </label>
             <br/>
             <input type="submit" value={this.props.formType} 
             className="login-submit"/>
-            {this.demoUser()}
+            <div className="session-form-or">or</div>
+            <button onClick={this.props.formType === 'Log In' ? () => this.openModal('signup') : () => this.openModal('login')} className="login-submit">
+              {this.props.formType === 'Log In' ? "Create an account" : "Log In"}
+              </button>
           </div>
         </form>
       </div>  

@@ -10,37 +10,62 @@
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   color: black;
   font-size: 18px;
-  line-height: 24px;
+
 }
 
 .login-form-container {
    display: flex;
    justify-content: center;
-   padding: 20px;
 }
 
  .login-form {
    display: flex;
    justify-content: center;
    flex-direction: column;
-   
+   padding: 20px;
+  line-height: 24px;
  }
 
  .login-input {
    display: flex;
    justify-content: center;
    padding: 7px 8px;
+   border: 1px solid lightgray;
    border-radius: 5px;
    font-size: 18px;
+   margin: 10px 0px 10px 0px;
  }
 
  .login-form-box {
-   padding: 20px;
+   padding: 80px 20px 80px 20px;
    box-shadow: 0 0 1rem rgba(0,0,0,.2);
  }
+
+.login-submit, .demo-user {
+  /* display: inline-block; */
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  background: #531699;
+  color: white;
+}
+
+.login-submit:hover {
+    background: #6735a0;
+    transition-duration: 0.2s;
+}
+
+.demo-user:hover {
+    background: #6735a0;
+    transition-duration: 0.2s;
+}
+
+.session-form-or {
+  text-align: center;
+}
