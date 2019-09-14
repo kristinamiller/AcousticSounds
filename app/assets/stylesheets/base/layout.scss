@@ -1,0 +1,30 @@
+ body {
+   background: white;
+   font-family: 'Lucida Grande', sans-serif;
+   color: black;
+  //  margin-left: 5%;
+  //  margin-right: 5%;
+ }
+
+
+ button,
+input[type="submit"] {
+  cursor: pointer;
+  
+}
+
+.home-component {
+  padding: 30px;
+  background: url('priscilla-du-preez-de-HbaYzZqA-unsplash.jpg');
+  height: 600px;
+  background-size: cover;
+}
+
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-size: 30px;
+}
