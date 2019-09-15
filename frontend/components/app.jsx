@@ -9,6 +9,7 @@ import Modal from './modal/modal';
 import NotFound from './session_form/not_found';
 import TrackFormContainer from './track_form/track_form_container';
 import TrackShowContainer from './track_show/track_show_container';
+import SplashContainer from './home/splash_container'
 
 const App = () => (
   <div>
@@ -18,9 +19,11 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/upload" component={TrackFormContainer}/>
+      <AuthRoute exact path="/" component={SplashContainer}/>
+      <ProtectedRoute exact path="/home" component={Home}/>
+      <ProtectedRoute exact path="/upload" component={TrackFormContainer}/>
       <Route exact path="/tracks/:id" component={TrackShowContainer}/>
+      {/* <Route exact path="/:userId/tracks" component={  }/> */}
       <Route path="/" component={NotFound}/>
     </Switch>
   </div>

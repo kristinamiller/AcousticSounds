@@ -1,4 +1,5 @@
 import React from 'react';
+import TrackIndexItem from './track_index_item';
 
 class TrackIndex extends React.Component {
 
@@ -7,10 +8,25 @@ class TrackIndex extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.props.fetchTracks();
+  }
+
   render() {
     return (
-      <div>
-
+      <div className="home-track-index">
+        This is the Index of all Tracks
+        <ul>
+          {
+            this.props.tracks.map((track) => {
+              return <TrackIndexItem 
+                        key={track.id}
+                        track={track}
+              />
+            })
+          }
+        </ul>
+        
       </div>
     )
   }

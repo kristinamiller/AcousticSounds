@@ -3,7 +3,7 @@ class Api::TracksController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def index 
-    @tracks = Track.all.limit(10)
+    @tracks = Track.all
     render :index
   end
 
