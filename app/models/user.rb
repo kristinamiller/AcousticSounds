@@ -9,6 +9,11 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  display_name    :string
+#  first_name      :string
+#  last_name       :string
+#  city            :string
+#  country         :string
+#  bio             :text
 #
 
 class User < ApplicationRecord
@@ -16,6 +21,10 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6}, allow_nil: true
+
+  has_many :tracks,
+  foreign_key: :artist_id,
+  class_name: :Track
 
   after_initialize :ensure_session_token
 

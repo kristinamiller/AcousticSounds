@@ -7,6 +7,7 @@ import Home from './components/home/home';
 import * as SessionApiUtils from './utils/session_api_util';
 import * as sessionActions from './actions/session_actions';
 import App from './components/app';
+import * as TracksUtil from './utils/tracks_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;

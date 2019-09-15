@@ -1,0 +1,41 @@
+.splash-component {
+  padding: 30px;
+  background: url('priscilla-du-preez-de-HbaYzZqA-unsplash.jpg');
+  height: 600px;
+  background-size: cover;
+}
+
+.splash-items {
+  display: flex;
+  justify-content: center;
+  margin-top: 22%;
+}
+
+.tagline {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  text-shadow: 0px 0px 3px rgba(134, 100, 76, 0.74);
+}
+
+
+.splash-open-modal {
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 12px 30px 12px 30px;
+  text-align: center;
+  background-color: #531699;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  margin-top: 70px;
+  box-shadow: 0 0 1rem rgba(0,0,0,.2);
+  background: -webkit-linear-gradient(#684491, #531699);
+}
+
+.splash-open-modal:hover {
+  color: white;
+  background: -webkit-linear-gradient(#765c92, #531699);
+}

@@ -9,6 +9,11 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  display_name    :string
+#  first_name      :string
+#  last_name       :string
+#  city            :string
+#  country         :string
+#  bio             :text
 #
 
 require 'test_helper'

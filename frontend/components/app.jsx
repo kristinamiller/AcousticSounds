@@ -7,6 +7,8 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import Home from './home/home';
 import Modal from './modal/modal';
 import NotFound from './session_form/not_found';
+import TrackFormContainer from './track_form/track_form_container';
+import TrackShowContainer from './track_show/track_show_container';
 
 const App = () => (
   <div>
@@ -17,9 +19,8 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={Home}/>
-      {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
-      {/* <Route exact path="/" component={Home}/> */}
+      <Route exact path="/upload" component={TrackFormContainer}/>
+      <Route exact path="/tracks/:id" component={TrackShowContainer}/>
       <Route path="/" component={NotFound}/>
     </Switch>
   </div>
