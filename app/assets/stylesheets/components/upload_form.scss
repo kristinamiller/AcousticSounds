@@ -46,10 +46,18 @@
 }
 
 .genre-dropdown {
-  -webkit-appearance: none;
-  border-radius: 10px;
+  // -webkit-appearance: none;
+  border-radius: 5px;
+  border: 1px solid lightgray;
   width: 250px;
-  margin: auto;
+  margin: 0px 0px 0px 10px;
+  padding: 8px;
+  background: white;
+}
+
+
+.genre-dropdown-item {
+  -webkit-appearance: none;
   background: white;
 }
 

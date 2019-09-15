@@ -8,10 +8,21 @@
  }
 
 
- button,
+ button, select,
 input[type="submit"] {
   cursor: pointer; 
 }
+
+input:focus {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+textarea:focus {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
 
 
 

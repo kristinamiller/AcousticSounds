@@ -28,11 +28,11 @@ class TrackForm extends React.Component {
           <label className="upload-label">Genre
           {/* <div> */}
               <select className="genre-dropdown">
-                <option value="country">Country</option>
-                <option value="folk">Folk</option>
-                <option value="bluegrass">Bluegrass</option>
-                <option value="americana">Americana</option>
-                <option value="indie">Indie</option>
+              <option className="genre-dropdown-item" value="country">Country</option>
+              <option className="genre-dropdown-item" value="folk">Folk</option>
+              <option className="genre-dropdown-item" value="bluegrass">Bluegrass</option>
+              <option className="genre-dropdown-item" value="americana">Americana</option>
+              <option className="genre-dropdown-item" value="indie">Indie</option>
               </select>
           {/* </div> */}
 

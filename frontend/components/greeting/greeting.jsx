@@ -29,6 +29,9 @@ class Greeting extends React.Component {
           </div>
           <div className="nav-items-right">
             <div>
+              <Link to="/upload">Upload</Link>
+            </div>
+            <div>
               <button className="sign-in" onClick={() => this.openModal('login')}>Sign In</button>
             </div>
             <div>
