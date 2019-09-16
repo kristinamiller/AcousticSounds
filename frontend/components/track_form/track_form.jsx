@@ -5,9 +5,15 @@ class TrackForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      title: "",
+      description: ""
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
 
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
   }
 
   render() {

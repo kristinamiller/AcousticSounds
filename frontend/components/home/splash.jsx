@@ -26,7 +26,7 @@ class Splash extends React.Component {
           </div>
         </div>
         <div className="track-index">
-          {/* <TrackIndexContainer /> */}
+          <TrackIndexContainer />
         </div>
       </div>
 
