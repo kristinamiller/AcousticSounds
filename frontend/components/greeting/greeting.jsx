@@ -53,7 +53,7 @@ class Greeting extends React.Component {
               <Link to="/">Stream</Link>
             </div>
             <div className="nav-link">
-              <Link to="/">Library</Link>
+              <Link to={`/${this.props.currentUser.id}/tracks`}>Library</Link>
             </div>
           </div>
           <div className="nav-items-right">

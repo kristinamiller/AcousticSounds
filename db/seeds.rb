@@ -4,7 +4,7 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.first) ***
 
 ActiveRecord::Base.transaction do 
 
@@ -14,6 +14,9 @@ ActiveRecord::Base.transaction do
     email: 'test@email.com',
     password: 'password'
   )
+
+  track1 = Track.create!(name: 'something', artist_id: 2) 
+  track1.photo.attach(io: File.open('./app/aa...'), filename: 'whatever.mp3' )
 
 
 

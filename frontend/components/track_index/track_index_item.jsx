@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class TrackIndexItem extends React.Component {
 
@@ -10,7 +11,7 @@ class TrackIndexItem extends React.Component {
   render() {
     return(
       <li>
-        {this.props.track.title}
+        <Link to={`/tracks/${this.props.track.id}`}>{this.props.track.title}</Link>
       </li>
     )
   }
