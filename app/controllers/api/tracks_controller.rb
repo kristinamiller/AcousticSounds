@@ -1,6 +1,6 @@
 class Api::TracksController < ApplicationController
 
-  before_action :require_logged_in, only: [:create]
+  before_action :require_login, only: [:create]
 
   def index 
     @tracks = Track.all
@@ -12,9 +12,9 @@ class Api::TracksController < ApplicationController
     @track.artist_id = current_user.id
 
     if @track.save 
-      render :show
+      render json: {message: "Photo successfully uploaded!"}
     else
-      render json: @user.errors.full_messages, status: 422
+      render json: @track.errors.full_messages, status: 422
     end
   end
 
@@ -39,10 +39,12 @@ class Api::TracksController < ApplicationController
   private
 
   def track_params
-    params.require(tracks).permit(
+    params.require(:track).permit(
       :title,
       :description,
-      :genre_id
+      :genre_id,
+      :photo,
+      :audio
     )
   end
 

@@ -10,22 +10,31 @@ class TrackIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchTracks();
+    // this.props.fetchUsers();
   }
 
   render() {
     return (
-      <div className="home-track-index">
-        This is the Index of all Tracks
-        <ul>
-          {
-            this.props.tracks.map((track) => {
-              return <TrackIndexItem 
-                        key={track.id}
-                        track={track}
-              />
-            })
-          }
-        </ul>
+      <div className="track-index-container">
+        <h1>This is the Index of all Tracks</h1>  
+        {/* <ul>
+        {this.props.users.map((user) => {
+          return <li key={user.id}>{user.email}</li>
+        })}
+        </ul> */}
+        <div className="track-index">
+          <ul className="track-index-ul">
+            {
+              this.props.tracks.map((track) => {
+                return <TrackIndexItem 
+                          key={track.id}
+                          track={track}
+                          artistId={track.artist_id}
+                />
+              })
+            }
+          </ul>
+        </div>
         
       </div>
     )

@@ -23,7 +23,9 @@ class TrackShow extends React.Component {
       <div className="track-show-container">
         <h3>Title: {this.props.track.title}</h3>
         <img src={this.props.track.imageURL}></img>
-        
+        <audio controls>
+          <source src={this.props.track.audioURL} type="audio/ogg"/>
+        </audio>
 
       </div>
     )

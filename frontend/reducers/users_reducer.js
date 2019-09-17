@@ -3,7 +3,7 @@ import {
 } from '../actions/session_actions';
 
 import { 
-  RECEIVE_USER
+  RECEIVE_USER, RECEIVE_ALL_USERS
 } from '../actions/user_actions';
 
 
@@ -12,6 +12,11 @@ const usersReducer = (state = {}, action) => {
   let newState = Object.assign({}, state)
 
   switch (action.type) {
+    case RECEIVE_ALL_USERS:
+      Object.keys(action.users).forEach((userId) => {
+        newState[userId] = action.users[userId];
+      })
+      return newState;
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.user.id]: action.user})
     case RECEIVE_USER:
