@@ -8,11 +8,12 @@ class Api::TracksController < ApplicationController
   end
 
   def create
+    
     @track = Track.new(track_params)
     @track.artist_id = current_user.id
 
     if @track.save 
-      render json: {message: "Photo successfully uploaded!"}
+      render :show
     else
       render json: @track.errors.full_messages, status: 422
     end
@@ -43,6 +44,7 @@ class Api::TracksController < ApplicationController
       :title,
       :description,
       :genre_id,
+      :artist_id,
       :photo,
       :audio
     )

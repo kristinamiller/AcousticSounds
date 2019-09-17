@@ -25,9 +25,9 @@ export const fetchTracks = () => (dispatch) => (
 export const fetchTrack = (id) => (dispatch) => (
   TracksUtil.fetchTrack(id).then((track) => dispatch(receiveTrack(track)))
 )
-export const createTrack = (track) => (dispatch) => (
-  TracksUtil.createTrack(track).then((track) => dispatch(receiveTrack(track)))
-)
+export const createTrack = (track) => (dispatch) => { 
+  return TracksUtil.createTrack(track).then((track) => dispatch(receiveTrack(track)))
+}
 export const updateTrack = (track) => (dispatch) => (
   TracksUtil.updateTrack(track).then((track) => dispatch(receiveTrack(track)))
 )

@@ -22,7 +22,10 @@ class TrackForm extends React.Component {
       title: "",
       genre_id: 10,
       description: "",
-      photoFile: null
+      artist_id: this.props.currentUser.id,
+      photoFile: null,
+      audioFile: null,
+      photoUrl: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePhoto = this.handlePhoto.bind(this);
@@ -40,38 +43,52 @@ class TrackForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('track[title]', this.state.title);
-    formData.append('track[photo]', this.state.photoFile);
-    $.ajax({
-      method: 'POST',
-      url: '/api/tracks',
-      contentType: false,
-      processData: false
-    }).then(
+    formData.append('track[genre_id]', this.state.genre_id);
+    formData.append('track[artist_id]', this.state.artist_id);
+    formData.append('track[description]', this.state.description);
+    if (this.state.photoFile) {
+      formData.append('track[photo]', this.state.photoFile);
+    }
+    if (this.state.audioFile) {
+      formData.append('track[audio]', this.state.audioFile);
+    }
+    
+    this.props.action(formData).then(
       (response) => console.log(response.message),
       (response) => console.log(response.responseJSON)
     )
-    // .then(data => this.props.history.push(`/tracks/${data.track.id}`));
+      .then(data => this.props.history.push(`/${this.props.currentUser.id}/tracks`));
   }
 
   handlePhoto(e) {
-    this.setState({photoFile: e.currentTarget.files[0]});
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
   handleAudio(e) {
     this.setState({audioFile: e.currentTarget.files[0]});
   }
 
   render() {
-    console.log(this.state)
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl}></img> : null;
     return(
       <div className="upload-form-container">
         <form className="upload-form" onSubmit={this.handleSubmit}>
           <h1 className="upload-header">Song info</h1>
-          <label>Upload Image
+          <label>Upload Photo
             <input 
               type="file"
               onChange={this.handlePhoto}
               />
           </label>
+          <h3>Image preview</h3>
+            {preview}
           <label>Upload Track
             <input 
               type="file"

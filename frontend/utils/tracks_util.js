@@ -12,13 +12,16 @@ export const fetchTrack = (id) => (
   })
 )
 
-export const createTrack = (track) => (
-  $.ajax({
+export const createTrack = (track) => {
+  return $.ajax({
     method: 'POST',
     url: `api/tracks`,
-    data: { track }
+    data: track,
+    contentType: false,
+    processData: false
   })
-)
+}
+
 export const updateTrack = (track) => (
   $.ajax({
     method: 'PATCH',

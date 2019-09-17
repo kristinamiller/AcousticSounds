@@ -20,7 +20,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => ({
   fetchTracks: () => dispatch(fetchTracks()),
-  fetchUser: (id) => { dispatch(fetchUser(id))}
+  fetchUser: (id) => dispatch(fetchUser(id))
 })
 
 export default connect(msp, mdp)(UserTracks)

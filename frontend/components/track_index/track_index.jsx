@@ -10,7 +10,7 @@ class TrackIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchTracks();
-    // this.props.fetchUsers();
+    this.props.fetchUsers();
   }
 
   render() {
@@ -29,7 +29,7 @@ class TrackIndex extends React.Component {
                 return <TrackIndexItem 
                           key={track.id}
                           track={track}
-                          artistId={track.artist_id}
+                          artist={this.props.users[track.artist_id]}
                 />
               })
             }

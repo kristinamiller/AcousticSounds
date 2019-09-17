@@ -9,7 +9,7 @@ class Greeting extends React.Component {
   }
 
   render() {
-
+    let userName = this.props.currentUser.display_name ? this.props.currentUser.display_name : this.props.currentUser.email;
     const sessionLinks = () => (
       <div>
         <div className="nav-bar">
@@ -60,7 +60,9 @@ class Greeting extends React.Component {
             <div className="nav-link upload-nav">
               <Link to="/upload">Upload</Link>
             </div>
-            <h2 className="hello-user">Hi, {this.props.currentUser.email}</h2>
+            <div className="nav-link">
+              <Link to="/upload">{userName}</Link>
+            </div>
             <div>
               <button className="create-account" onClick={this.props.logout}>
               Log Out

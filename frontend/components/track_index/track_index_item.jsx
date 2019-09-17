@@ -8,12 +8,9 @@ class TrackIndexItem extends React.Component {
 
   }
 
-  componentDidMount() {
-    // this.props.fetchUser(this.props.artistId)
-  }
 
   render() {
-    // let artist = this.props.fetchUser(this.props.artistId)
+    let artistName = this.props.artist.display_name ? this.props.artist.display_name : this.props.artist.email;
     return(
       <li className="track-index-item-li">
         <Link 
@@ -27,7 +24,7 @@ class TrackIndexItem extends React.Component {
           <img src={this.props.track.imageURL} className="track-index-image" />
         </Link>
         
-        <Link to='/' className="track-index-artist-name">Artist Name {this.props.artistId}</Link>
+        <Link to='/' className="track-index-artist-name">{artistName}</Link>
         <audio controls className="track-index-audio-controls">
           <source src={this.props.track.audioURL} type="audio/ogg" />
         </audio>

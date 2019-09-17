@@ -14,12 +14,20 @@
 class Track < ApplicationRecord
   validates :title, :artist_id, presence: true
 
+  validate :ensure_photo
+
   has_one_attached :photo
-  
+
   has_one_attached :audio
 
   belongs_to :artist,
   foreign_key: :artist_id,
   class_name: :User
+
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "Must be attached"
+    end
+  end
 
 end

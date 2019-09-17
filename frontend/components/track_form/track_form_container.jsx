@@ -3,9 +3,10 @@ import React from 'react';
 import TrackForm from './track_form';
 import { createTrack } from '../../actions/track_actions';
 
-const msp = (state, ownProps) => ({
+const msp = ({ session, entities: { users } }) => {
 
-})
+  return { currentUser: users[session.id] }
+}
 
 const mdp = (dispatch) => ({
   action: (track) => dispatch(createTrack(track))
