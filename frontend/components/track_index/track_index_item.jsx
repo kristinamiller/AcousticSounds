@@ -27,22 +27,29 @@ class TrackIndexItem extends React.Component {
     // }
     return(
       <li className="track-index-item-li">
-        
-        <Link
-          to={`/tracks/${this.props.track.id}`}
-          className="track-index-image-link">
-          <img src={this.props.track.imageURL} className="track-index-image" />
-        </Link>
-        <Link
-          to={`/tracks/${this.props.track.id}`}
-          className="track-index-title-link">
-          {this.props.track.title}
-        </Link>
-        <Link to={artistLink}>{artistName}</Link>
-        
-        <audio controls className="track-index-audio-controls">
-          <source src={this.props.track.audioURL} type="audio/ogg" />
-        </audio>
+        <div>
+          <Link
+            to={`/tracks/${this.props.track.id}`}
+            className="track-index-image-link">
+            <img src={this.props.track.imageURL} className="track-index-image" />
+          </Link>
+        </div>
+        <div className="track-title-div">
+          <Link
+            to={`/tracks/${this.props.track.id}`}
+            className="track-index-title-link">
+            {this.props.track.title}
+          </Link>
+        </div>
+        <div>
+          <Link to={artistLink}>{artistName}</Link>
+        </div>
+        {/* <div>
+          <audio controls className="track-index-audio-controls">
+            <source src={this.props.track.audioURL} type="audio/ogg" />
+          </audio>
+        </div>
+         */}
       </li>
     )
   }

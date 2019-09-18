@@ -5,11 +5,23 @@ import { Link } from 'react-router-dom';
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.openModal = this.props.openModal.bind(this)
+    this.openModal = this.props.openModal.bind(this);
+    this.findCurrentUser = this.findCurrentUser.bind(this);
+  }
+
+  findCurrentUser() {
+    if (this.props.currentUser.display_name) {
+      return this.props.currentUser.display_name;
+    } else {
+      return this.props.currentUser.email;
+    }
   }
 
   render() {
-    let userName = this.props.currentUser.display_name ? this.props.currentUser.display_name : this.props.currentUser.email;
+    if (this.props.currentUser) {
+      let userName = this.props.currentUser.display_name ? this.props.currentUser.display_name : this.props.currentUser.email;
+    }
+    
     const sessionLinks = () => (
       <div>
         <div className="nav-bar">
@@ -40,6 +52,7 @@ class Greeting extends React.Component {
       </div>
     );
     const personalGreeting = () => (
+      
       <div>
         <div className="nav-bar">
           <div className="nav-items-left">
@@ -61,7 +74,7 @@ class Greeting extends React.Component {
               <Link to="/upload">Upload</Link>
             </div>
             <div className="nav-link">
-              <Link to={`/${this.props.currentUser.id}/tracks`}>{userName}</Link>
+              <Link to={`/${this.props.currentUser.id}/tracks`}>{this.findCurrentUser()}</Link>
             </div>
             <div>
               <button className="create-account" onClick={this.props.logout}>

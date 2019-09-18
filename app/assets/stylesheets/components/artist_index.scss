@@ -1,0 +1,35 @@
+.browse-artists {
+  margin: 20px;
+}
+
+.artist-index-item-ul {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.artist-index-item-li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.artist-index-name-link {
+  text-align: center;
+}
+
+.artist-index-image-link {
+
+}
+
+
+.artist-index-image {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  // box-shadow: 0 0 1rem rgba(0,0,0,.2);
+  border-radius: 50%;
+  overflow: hidden;
+}
+

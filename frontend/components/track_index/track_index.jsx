@@ -21,7 +21,7 @@ class TrackIndex extends React.Component {
     return (
       <div className="track-index-container">
         <div className="browse-tracks">
-          <h1 className="browse-tracks-heading">Browse New Acoustic Music</h1>  
+          <h1 className="browse-heading">New Music</h1>  
           <div className="track-index">
             <ul className="track-index-ul">
               {
@@ -37,8 +37,8 @@ class TrackIndex extends React.Component {
           </div>
         </div>
         <div className="browse-artists">
-          <h1 className="browse-tracks-heading">Browse Acoustic Artists</h1>
-          <ul>
+          <h1 className="browse-heading">Artists Picked For You</h1>
+          <ul className="artist-index-item-ul">
             {userSlice.map((user) => {
               return <ArtistIndexItem 
                         key={user.id}

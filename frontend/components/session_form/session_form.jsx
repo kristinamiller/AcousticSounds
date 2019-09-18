@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
   }
 
   demoUser() {
-    const demoUser = { email: 'test@email.com', password: 'password' }
+    const demoUser = { email: 'demouser@acousticsounds.com', password: 'fullstack123' }
     return (
       <button className="demo-user" onClick={(e) => {
         e.preventDefault()

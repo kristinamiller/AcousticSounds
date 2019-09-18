@@ -1,35 +1,54 @@
 .track-index-container {
   display: flex;
+  flex-direction: column;
 }
 
 .track-index {
   display: flex;
+
+}
+
+.browse-tracks {
+  margin: 20px;
+}
+
+.browse-heading {
+  font-size: 24px;
 }
 
 .track-index-ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-.track-index-li {
+.track-index-item-li {
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 
 .track-index-title-link {
-  
+  text-align: center;
+}
+
+.track-title-div {
+  text-align: center;
 }
 
 .track-index-image-link {
-  
+  text-align: center;
 }
 
 .track-index-image {
-  width: 150px;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  margin: 10px 0px 10px 0px;
+  box-shadow: 0 0 1rem rgba(0,0,0,.2);
 }
 
 .track-index-artist-name {
-  
+  text-align: center;
 }
 
 .track-index-audio-controls {
