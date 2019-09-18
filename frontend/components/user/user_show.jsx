@@ -1,4 +1,5 @@
 import React from 'react';
+import UserTracks from './user_tracks'
 
 
 class UserShow extends React.Component {
@@ -9,6 +10,7 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchTracks();
     this.props.fetchUser(this.props.match.params.userId)
   }
 
@@ -17,8 +19,19 @@ class UserShow extends React.Component {
     if (!this.props.user) {
       return null;
     }
+    let userName = this.props.user.display_name ? this.props.user.display_name : this.props.user.email;
     return (
-      <h2>{this.props.user.email}</h2>
+      <div className="user-show-container">
+        <div className="user-header">
+          <h2>{userName}</h2>
+          <img src="this.props.user.imageURL"/>
+        </div>
+        <UserTracks 
+          key={this.props.user.id}
+          tracks={this.props.tracks}
+          user={this.props.user}
+        />
+      </div>
     )
   }
 

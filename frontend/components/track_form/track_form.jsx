@@ -53,11 +53,7 @@ class TrackForm extends React.Component {
       formData.append('track[audio]', this.state.audioFile);
     }
     
-    this.props.action(formData).then(
-      (response) => console.log(response.message),
-      (response) => console.log(response.responseJSON)
-    )
-      .then(data => this.props.history.push(`/${this.props.currentUser.id}/tracks`));
+    this.props.action(formData).then(data => this.props.history.push(`/${this.props.currentUser.id}/tracks`));
   }
 
   handlePhoto(e) {
@@ -75,12 +71,25 @@ class TrackForm extends React.Component {
     this.setState({audioFile: e.currentTarget.files[0]});
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
   render() {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl}></img> : null;
     return(
       <div className="upload-form-container">
         <form className="upload-form" onSubmit={this.handleSubmit}>
           <h1 className="upload-header">Song info</h1>
+          <h3 className="upload-errors">{this.renderErrors()}</h3>
           <label>Upload Photo
             <input 
               type="file"

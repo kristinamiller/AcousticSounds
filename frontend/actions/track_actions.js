@@ -3,6 +3,8 @@ import * as TracksUtil from '../utils/tracks_util';
 export const RECEIVE_ALL_TRACKS = 'RECEIVE_ALL_TRACKS';
 export const RECEIVE_TRACK = 'RECEIVE_TRACK';
 export const REMOVE_TRACK = 'REMOVE_TRACK';
+export const RECEIVE_UPLOAD_ERRORS = "RECEIVE_UPLOAD_ERRORS";
+export const CLEAR_UPLOAD_ERRORS = "CLEAR_UPLOAD_ERRORS";
 
 const receiveAllTracks = (tracks) => ({
   type: RECEIVE_ALL_TRACKS,
@@ -19,6 +21,15 @@ const removeTrack = (track) => ({
   trackId: track.id
 })
 
+const receiveUploadErrors = (errors) => ({
+  type: RECEIVE_UPLOAD_ERRORS,
+  errors
+})
+
+export const clearUploadErrors = () => ({
+  type: CLEAR_UPLOAD_ERRORS
+})
+
 export const fetchTracks = () => (dispatch) => (
   TracksUtil.fetchTracks().then((tracks) => dispatch(receiveAllTracks(tracks)))
 )
@@ -26,7 +37,10 @@ export const fetchTrack = (id) => (dispatch) => (
   TracksUtil.fetchTrack(id).then((track) => dispatch(receiveTrack(track)))
 )
 export const createTrack = (track) => (dispatch) => { 
-  return TracksUtil.createTrack(track).then((track) => dispatch(receiveTrack(track)))
+  return TracksUtil.createTrack(track).then(
+    (track) => dispatch(receiveTrack(track)),
+    (err) => (dispatch(receiveUploadErrors(err.responseJSON)))
+    )
 }
 export const updateTrack = (track) => (dispatch) => (
   TracksUtil.updateTrack(track).then((track) => dispatch(receiveTrack(track)))

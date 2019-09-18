@@ -15,6 +15,7 @@ class Track < ApplicationRecord
   validates :title, :artist_id, presence: true
 
   validate :ensure_photo
+  validate :ensure_audio
 
   has_one_attached :photo
 
@@ -26,7 +27,12 @@ class Track < ApplicationRecord
 
   def ensure_photo
     unless self.photo.attached?
-      errors[:photo] << "Must be attached"
+      errors[:photo] << "must be attached"
+    end
+  end
+  def ensure_audio
+    unless self.audio.attached?
+      errors[:audio] << "must be attached"
     end
   end
 

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import UserTracks from './user_tracks';
-import { fetchTracks } from '../../actions/track_actions';
+
 import { fetchUser } from '../../actions/user_actions';
 // import { userTrackSelector } from '../../reducers/selectors';
 

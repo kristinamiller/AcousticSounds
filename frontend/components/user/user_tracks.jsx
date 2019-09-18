@@ -1,4 +1,5 @@
 import React from 'react';
+import TrackIndexItem from '../track_index/track_index_item';
 
 class UserTracks extends React.Component {
 
@@ -7,10 +8,6 @@ class UserTracks extends React.Component {
 
   }
 
-  componentDidMount() {
-    this.props.fetchTracks();
-    this.props.fetchUser(this.props.match.params.userId)
-  }
 
   render() {
     // debugger
@@ -21,7 +18,11 @@ class UserTracks extends React.Component {
         <h2>{this.props.user.email}</h2>
         <ul>
           {this.props.tracks.map((track) => {
-            return <li key={track.id}>Title: {track.title}</li>
+            return <TrackIndexItem
+              key={track.id}
+              track={track}
+              artist={this.props.user}
+            />
           })}
         </ul>
       </div>
