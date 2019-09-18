@@ -10,7 +10,21 @@ class TrackIndexItem extends React.Component {
 
 
   render() {
-    let artistName = this.props.artist.display_name ? this.props.artist.display_name : this.props.artist.email;
+    let artistName = "";
+    let artistLink = "/";
+    if (this.props.artist) {
+      this.props.artist.display_name ? artistName = this.props.artist.display_name : artistName = this.props.artist.email;
+      artistLink = `/${this.props.artist.id}/tracks`
+    }
+
+
+    // let artistLink = "";
+    // if (!this.props.user) {
+    //   <p>Loading</p>
+    // } else {
+    //   let artistName = this.props.artist.display_name ? this.props.artist.display_name : this.props.artist.email;
+    //   artistLink = <Link to='/' className="track-index-artist-name">{artistName}</Link>
+    // }
     return(
       <li className="track-index-item-li">
         <Link 
@@ -23,8 +37,8 @@ class TrackIndexItem extends React.Component {
           className="track-index-image-link">
           <img src={this.props.track.imageURL} className="track-index-image" />
         </Link>
+        <Link to={artistLink}>{artistName}</Link>
         
-        <Link to='/' className="track-index-artist-name">{artistName}</Link>
         <audio controls className="track-index-audio-controls">
           <source src={this.props.track.audioURL} type="audio/ogg" />
         </audio>

@@ -61,7 +61,7 @@ class Greeting extends React.Component {
               <Link to="/upload">Upload</Link>
             </div>
             <div className="nav-link">
-              <Link to="/upload">{userName}</Link>
+              <Link to={`/${this.props.currentUser.id}/tracks`}>{userName}</Link>
             </div>
             <div>
               <button className="create-account" onClick={this.props.logout}>

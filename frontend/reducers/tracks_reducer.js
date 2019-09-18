@@ -25,7 +25,6 @@ const tracksReducer = (state = {}, action) => {
     default:
       return state;
   }
-
 }
 
 export default tracksReducer;

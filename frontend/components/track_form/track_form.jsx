@@ -31,6 +31,7 @@ class TrackForm extends React.Component {
     this.handlePhoto = this.handlePhoto.bind(this);
     this.handleAudio = this.handleAudio.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
 
   }
 
@@ -38,6 +39,7 @@ class TrackForm extends React.Component {
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
+  
 
   handleSubmit(e) {
     e.preventDefault();
@@ -69,6 +71,10 @@ class TrackForm extends React.Component {
   }
   handleAudio(e) {
     this.setState({audioFile: e.currentTarget.files[0]});
+  }
+
+  handleCancel(e) {
+    this.props.history.push(`/${this.props.currentUser.id}/tracks`)
   }
 
   renderErrors() {
@@ -143,7 +149,7 @@ class TrackForm extends React.Component {
             />
           </label>
           <div className="upload-buttons">
-            <button className="upload-cancel">Cancel</button>
+            <button onClick={this.handleCancel} className="upload-cancel">Cancel</button>
             <input
               type="submit"
               value="Save"

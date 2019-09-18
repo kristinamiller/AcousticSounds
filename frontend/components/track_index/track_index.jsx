@@ -1,5 +1,6 @@
 import React from 'react';
 import TrackIndexItem from './track_index_item';
+import ArtistIndexItem from '../home/artist_index_item';
 
 class TrackIndex extends React.Component {
 
@@ -14,25 +15,36 @@ class TrackIndex extends React.Component {
   }
 
   render() {
+    let userSlice = this.props.users.slice(0,6);
+    let trackSlice = this.props.tracks.slice(0,6);
+
     return (
       <div className="track-index-container">
-        <h1>This is the Index of all Tracks</h1>  
-        {/* <ul>
-        {this.props.users.map((user) => {
-          return <li key={user.id}>{user.email}</li>
-        })}
-        </ul> */}
-        <div className="track-index">
-          <ul className="track-index-ul">
-            {
-              this.props.tracks.map((track) => {
-                return <TrackIndexItem 
-                          key={track.id}
-                          track={track}
-                          artist={this.props.users[track.artist_id]}
-                />
-              })
-            }
+        <div className="browse-tracks">
+          <h1 className="browse-tracks-heading">Browse New Acoustic Music</h1>  
+          <div className="track-index">
+            <ul className="track-index-ul">
+              {
+                trackSlice.map((track) => {
+                  return <TrackIndexItem 
+                            key={track.id}
+                            track={track}
+                            artist={this.props.users[track.artist_id]}
+                  />
+                })
+              }
+            </ul>
+          </div>
+        </div>
+        <div className="browse-artists">
+          <h1 className="browse-tracks-heading">Browse Acoustic Artists</h1>
+          <ul>
+            {userSlice.map((user) => {
+              return <ArtistIndexItem 
+                        key={user.id}
+                        artist={user}
+                  />
+            })}
           </ul>
         </div>
         
