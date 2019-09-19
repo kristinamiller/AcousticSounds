@@ -5,6 +5,9 @@ export const RECEIVE_TRACK = 'RECEIVE_TRACK';
 export const REMOVE_TRACK = 'REMOVE_TRACK';
 export const RECEIVE_UPLOAD_ERRORS = "RECEIVE_UPLOAD_ERRORS";
 export const CLEAR_UPLOAD_ERRORS = "CLEAR_UPLOAD_ERRORS";
+export const PLAY_TRACK = "PLAY_TRACK";
+export const PAUSE_TRACK = "PAUSE_TRACK";
+
 
 const receiveAllTracks = (tracks) => ({
   type: RECEIVE_ALL_TRACKS,
@@ -29,6 +32,17 @@ const receiveUploadErrors = (errors) => ({
 export const clearUploadErrors = () => ({
   type: CLEAR_UPLOAD_ERRORS
 })
+
+export const playTrack = (track) => ({
+  type: PLAY_TRACK,
+  track
+})
+
+export const pauseTrack = (track) => ({
+  type: PAUSE_TRACK,
+  track
+})
+
 
 export const fetchTracks = () => (dispatch) => (
   TracksUtil.fetchTracks().then((tracks) => dispatch(receiveAllTracks(tracks)))

@@ -30,6 +30,7 @@ class TrackIndex extends React.Component {
                             key={track.id}
                             track={track}
                             artist={this.props.users[track.artist_id]}
+                            playTrack={this.props.playTrack}
                   />
                 })
               }

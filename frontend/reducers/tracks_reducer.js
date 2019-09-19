@@ -20,7 +20,7 @@ const tracksReducer = (state = {}, action) => {
       newState[action.track.id] = action.track;
       return newState;
     case REMOVE_TRACK:
-      delete newState[action.postId];
+      delete newState[action.trackId];
       return newState;
     default:
       return state;

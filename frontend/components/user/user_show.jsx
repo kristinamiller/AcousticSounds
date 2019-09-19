@@ -1,6 +1,7 @@
 import React from 'react';
-import UserTracks from './user_tracks'
+import UserTrack from './user_track'
 
+// add logic to see if current user from session matches user id in ownProps
 
 class UserShow extends React.Component {
 
@@ -15,6 +16,7 @@ class UserShow extends React.Component {
   }
 
 
+
   render() {
     if (!this.props.user) {
       return null;
@@ -23,13 +25,23 @@ class UserShow extends React.Component {
     return (
       <div className="user-show-container">
         <div className="user-header">
-          <h2>{userName}</h2>
-          <img src="this.props.user.imageURL"/>
+          <h2 className="user-show-name">{userName}</h2>
+          <img src={this.props.user.imageURL} className="user-show-image"/>
         </div>
-        <UserTracks 
+        <ul>
+          {this.props.tracks.map((track) => {
+            return <TrackIndexItem
+              key={track.id}
+              track={track}
+              artist={this.props.user}
+            />
+          })}
+        </ul>
+        <UserTrack 
           key={this.props.user.id}
           tracks={this.props.tracks}
           user={this.props.user}
+          isMine={this.props.isMine}
         />
       </div>
     )

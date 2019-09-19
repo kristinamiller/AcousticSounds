@@ -28,8 +28,11 @@
   width: 200px;
   height: 200px;
   margin: 10px;
-  // box-shadow: 0 0 1rem rgba(0,0,0,.2);
+  box-shadow: 0 0 1rem rgba(0,0,0,.2);
   border-radius: 50%;
   overflow: hidden;
 }
 
+.artist-index-image:hover {
+  box-shadow: 0 0 1rem rgba(0,0,0,.5);
+}

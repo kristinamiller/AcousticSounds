@@ -1,0 +1,21 @@
+.user-show-container {
+  display: flex;
+}
+
+.user-header {
+  
+}
+
+.user-show-name {
+
+}
+
+.user-show-image {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  // box-shadow: 0 0 1rem rgba(0,0,0,.2);
+  border-radius: 50%;
+  overflow: hidden;
+}

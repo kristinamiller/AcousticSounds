@@ -1,0 +1,48 @@
+.audio-player-container {
+  
+  display: flex;
+  background: #F1F3F4;
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+  position: fixed;
+  border-top: 0.5px solid lightgray;
+}
+
+.song-playing-div {
+  display: flex;
+  flex-direction: row;
+  // margin-left: 5px;
+}
+
+.song-playing-image {
+  width: 50px;
+  margin: 7px;
+}
+
+.song-playing-info {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  align-items: flex-start;
+  // justify-content: center;
+}
+
+.song-playing-title {
+  font-size: 17px;
+  margin: 5px;
+  font-weight: 100;
+}
+
+.song-playing-artist {
+  font-size: 15px;
+  margin: 0px 5px 0px 5px;
+}
+
+.audio-controls {
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  width: 70%;
+}
+

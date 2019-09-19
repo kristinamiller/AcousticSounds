@@ -1,11 +1,12 @@
 .track-index-container {
   display: flex;
   flex-direction: column;
+  margin: 5%;
 }
 
 .track-index {
   display: flex;
-
+  justify-content: center;
 }
 
 .browse-tracks {
@@ -19,24 +20,49 @@
 .track-index-ul {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .track-index-item-li {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  
 }
 
 .track-index-title-link {
   text-align: center;
+  
 }
 
 .track-title-div {
   text-align: center;
 }
 
-.track-index-image-link {
+.track-index-play-div {
+
+}
+
+.track-button {
+    display: flex;
+  justify-content: center;
+}
+
+.track-play-button {
+  display: block;
+  justify-self: center;
+  padding: 12px;
+  color: black;
   text-align: center;
+  background: white;
+  border: 1px solid #531699;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.track-play-button:hover {
+  background: #531699;
+  color: white;
 }
 
 .track-index-image {
@@ -45,6 +71,10 @@
   height: 200px;
   margin: 10px 0px 10px 0px;
   box-shadow: 0 0 1rem rgba(0,0,0,.2);
+}
+
+.track-index-image:hover {
+  box-shadow: 0 0 1rem rgba(0,0,0,.5);
 }
 
 .track-index-artist-name {

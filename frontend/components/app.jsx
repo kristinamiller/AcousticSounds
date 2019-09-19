@@ -11,6 +11,7 @@ import TrackFormContainer from './track_form/track_form_container';
 import TrackShowContainer from './track_show/track_show_container';
 import SplashContainer from './home/splash_container'
 import UserShowContainer from './user/user_show_container';
+import AudioPlayerContainer from './audio_player/audio_player_container';
 
 const App = () => (
   <div>
@@ -28,6 +29,10 @@ const App = () => (
       {/* <Route exact path="/:userId/tracks" component={  }/> */}
       <Route path="/" component={NotFound}/>
     </Switch>
+    <footer>
+      <AudioPlayerContainer />
+    </footer>
+
   </div>
 )
 
