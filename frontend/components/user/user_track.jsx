@@ -13,19 +13,45 @@ class UserTrack extends React.Component {
 
   }
 
+  renderDelete() {
+    if (this.props.isMine) {
+      return (
+      <button 
+      // onClick={this.props.deleteTrack(this.props.track.id)}
+          onClick={() => { 
+            if (window.confirm('Are you sure you wish to delete this track?')) {
+              this.props.deleteTrack(this.props.track.id)
+            } return false; 
+          }}
+      >
+        Delete Track
+        </button>
+        )
+    } else {
+      null;
+    }
+  }
+
+  // <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) }} />
+
 
   render() {
-    // debugger
+
+    let artistName = "";
+    let artistLink = "/";
+    if (this.props.artist) {
+      this.props.artist.display_name ? artistName = this.props.artist.display_name : artistName = this.props.artist.email;
+      artistLink = `/${this.props.artist.id}/tracks`
+    }
+ 
     return (
-      !this.props.user ? <p>Loading</p> : 
-      <div className="user-tracks-container">
-        User Tracks
-        <h2>{this.props.user.email}</h2>
-          {/* <div>
+      !this.props.artist ? <p>Loading</p> : 
+      <div className="user-track-container">
+          <div>
             <Link
               to={`/tracks/${this.props.track.id}`}
               className="track-index-image-link">
-              <img src={this.props.track.imageURL} className="track-index-image" />
+              <img src={this.props.track.imageURL} className="user-track-image" />
             </Link>
           </div>
           <div className="track-title-div">
@@ -41,18 +67,10 @@ class UserTrack extends React.Component {
           <div>
             <button onClick={this.playTrack}>
               Play Track</button>
-          </div> */}
-
-{/* 
-        <ul>
-          {this.props.tracks.map((track) => {
-            return <TrackIndexItem
-              key={track.id}
-              track={track}
-              artist={this.props.user}
-            />
-          })}
-        </ul> */}
+          </div>
+          <div>
+            {this.renderDelete()}
+          </div>
       </div>
     )
   }

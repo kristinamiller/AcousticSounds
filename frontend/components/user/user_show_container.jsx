@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import UserShow from './user_show';
 import { fetchUser } from '../../actions/user_actions';
-import { fetchTracks, playTrack } from '../../actions/track_actions';
+import { fetchTracks, playTrack, deleteTrack } from '../../actions/track_actions';
 
 function userTrackSelector(allTracks, userId) {
   return Object.values(allTracks).filter((track) => track.artist_id == userId)
@@ -19,7 +19,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => ({
   fetchTracks: () => dispatch(fetchTracks()),
   fetchUser: (id) => dispatch(fetchUser(id)),
-  playTrack: (track) => dispatch(playTrack(track))
+  playTrack: (track) => dispatch(playTrack(track)),
+  deleteTrack: (id) => dispatch(deleteTrack(id))
 })
 
 

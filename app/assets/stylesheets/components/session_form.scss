@@ -49,7 +49,7 @@
    box-shadow: 0 0 1rem rgba(0,0,0,.2);
  }
 
-.login-submit, .demo-user {
+.login-submit {
   /* display: inline-block; */
   border-radius: 4px;
   padding: 7px;
@@ -58,13 +58,23 @@
   color: white;
 }
 
+.demo-user {
+  /* display: inline-block; */
+  border-radius: 4px;
+  padding: 7px;
+  text-align: center;
+  background-color: #4161CF;
+  color: white;
+  margin: 40px 0px 20px 0px;
+}
+
 .login-submit:hover {
     background: #6735a0;
     transition-duration: 0.2s;
 }
 
 .demo-user:hover {
-    background: #6735a0;
+    background: rgb(84, 110, 197);
     transition-duration: 0.2s;
 }
 

@@ -10,7 +10,29 @@
   justify-content: center;
   padding: 20px;
   box-shadow: 0 0 1rem rgba(0,0,0,.2);
-  // flex-direction: column;
+  // flex-direction: row;
+}
+
+.upload-files {
+
+}
+
+.image-preview-div {
+  display: flex;
+  margin: 10px 0px 10px 0px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid gray;
+  text-align: center;
+  color: gray;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-image-preview {
+   width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .upload-form {
@@ -29,7 +51,7 @@
 }
 
 .upload-label {
-  margin: 10px 0px 10px 0px;
+  margin: 20px 0px 10px 0px;
 }
 
 .upload-input {

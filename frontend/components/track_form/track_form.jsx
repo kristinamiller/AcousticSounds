@@ -90,64 +90,80 @@ class TrackForm extends React.Component {
   }
 
   render() {
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl}></img> : null;
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="upload-image-preview"></img> : null;
     return(
       <div className="upload-form-container">
         <form className="upload-form" onSubmit={this.handleSubmit}>
           <h1 className="upload-header">Song info</h1>
           <h3 className="upload-errors">{this.renderErrors()}</h3>
-          <label>Upload Photo
-            <input 
-              type="file"
-              onChange={this.handlePhoto}
+          <div className="upload-files">
+            <label>Upload Photo
+            <input
+                type="file"
+                onChange={this.handlePhoto}
               />
-          </label>
-          <h3>Image preview</h3>
-            {preview}
-          <label>Upload Track
-            <input 
-              type="file"
-              onChange={this.handleAudio}
+            </label>
+            <div className="image-preview-div">
+              <h3></h3>
+              {preview}
+            </div>
+            
+            <label>Upload Track
+            <input
+                type="file"
+                onChange={this.handleAudio}
               />
-          </label>
-          <label className="upload-label">Title*
-            <input 
-              type="text" 
-              value={this.state.title} 
-              placeholder="Name your track"
-              onChange={this.handleInput('title')}
-              className="upload-input"
+            </label>
+          </div>
+          <div className="form-input-fields">
+            <div className="upload-label">
+
+            </div>
+            <label className="upload-label">Title*
+            <input
+                type="text"
+                value={this.state.title}
+                placeholder="Name your track"
+                onChange={this.handleInput('title')}
+                className="upload-input"
               />
-          </label>
-          <label className="upload-label">Genre
-          {/* <div> */}
-              <select 
+            </label>
+            <div className="upload-label">
+            <label className="upload-label">Genre
+          
+              <select
                 className="genre-dropdown"
                 defaultValue="Select Genre"
-                >
+              >
                 {
                   GENRE_LIST.map((genre) => {
-                    return <option 
-                      className="genre-dropdown-item" 
-                      value={genre.id} 
+                    return <option
+                      className="genre-dropdown-item"
+                      value={genre.id}
                       key={genre.name}
                       onChange={this.handleInput('genre')}>
-                        {genre.name}
-                      </option>
+                      {genre.name}
+                    </option>
                   })
                 }
               </select>
-          {/* </div> */}
+              
 
-          </label>
-          <label className="upload-label">Description
-            <textarea 
-              value={this.state.description} 
-              onChange={this.handleInput('description')}
-              placeholder="Describe your track"
-              className="upload-input"
-            />
-          </label>
+            </label>
+          </div>
+            <div className="upload-label">
+              <label>Description:
+              <textarea
+                value={this.state.description}
+                onChange={this.handleInput('description')}
+                placeholder="Describe your track"
+                className="upload-input"
+              />
+            </label>
+            </div>
+           </div>
+          
+          
           <div className="upload-buttons">
             <button onClick={this.handleCancel} className="upload-cancel">Cancel</button>
             <input

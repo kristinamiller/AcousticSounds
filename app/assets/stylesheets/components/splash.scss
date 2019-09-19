@@ -1,7 +1,7 @@
 .splash-component {
   padding: 30px;
-  background: url('priscilla-du-preez-de-HbaYzZqA-unsplash.jpg');
-  height: 500px;
+  background: image-url('splash-background-priscilla-du-preez.jpg');
+  height: 600px;
   background-size: cover;
 
 }
@@ -9,7 +9,7 @@
 .splash-items {
   display: flex;
   justify-content: center;
-  margin-top: 22%;
+  margin-top: 20%;
 }
 
 .tagline {
@@ -31,7 +31,7 @@
   color: white;
   font-size: 18px;
   position: absolute;
-  margin-top: 70px;
+  margin-top: 2%;
   box-shadow: 0 0 1rem rgba(0,0,0,.2);
   background: -webkit-linear-gradient(#684491, #531699);
 }

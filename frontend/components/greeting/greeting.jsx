@@ -7,6 +7,7 @@ class Greeting extends React.Component {
     super(props);
     this.openModal = this.props.openModal.bind(this);
     this.findCurrentUser = this.findCurrentUser.bind(this);
+    this.logoutUser = this.logoutUser.bind(this);
   }
 
   findCurrentUser() {
@@ -15,6 +16,11 @@ class Greeting extends React.Component {
     } else {
       return this.props.currentUser.email;
     }
+  }
+
+  logoutUser() {
+    this.props.logout()
+    // .then(() => { this.props.history.push('/')})
   }
 
   render() {
@@ -77,7 +83,7 @@ class Greeting extends React.Component {
               <Link to={`/${this.props.currentUser.id}/tracks`}>{this.findCurrentUser()}</Link>
             </div>
             <div>
-              <button className="create-account" onClick={this.props.logout}>
+              <button className="create-account" onClick={this.logoutUser}>
               Log Out
               </button>
             </div>

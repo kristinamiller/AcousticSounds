@@ -17,10 +17,10 @@ class AudioPlayer extends React.Component {
   }
 
   render() {
-    let audioSrc = "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcElCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c0f0af5ea06f3166a6a2fb6ee44806cbac398578/red-prairie-dawn.mp3";
-    let songTitle = "Red Prairie Dawn";
-    let songArtist = "Molly Tuttle";
-    let songImage = "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcE1CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--159b216d6a36ed07ad4d5c1cf235c2aeb36180ee/john-album.jpg"
+    let audioSrc = "";
+    let songTitle = "";
+    let songArtist = "";
+    let songImage = ""
     if (this.props.track) {
       audioSrc = this.props.track.audioURL;
       songTitle = this.props.track.title;

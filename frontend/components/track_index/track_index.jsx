@@ -20,7 +20,7 @@ class TrackIndex extends React.Component {
 
     return (
       <div className="track-index-container">
-        <div className="browse-tracks">
+        <div className="browse-artists">
           <h1 className="browse-heading">New Music</h1>  
           <div className="track-index">
             <ul className="track-index-ul">

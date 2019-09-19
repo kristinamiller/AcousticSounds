@@ -16,7 +16,7 @@ class Splash extends React.Component {
         <div className="splash-component">
           <div className="splash-items">
             <div className="tagline">
-              <h1>Real Instruments, Real Music</h1>
+              {/* <h1>Real Instruments, Real Music</h1> */}
             </div>
             <div className="splash-open-modal">
               <button onClick={() => this.props.openModal('signup')}>
