@@ -10,9 +10,12 @@ class UserTrack extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.playTrack = this.playTrack.bind(this);
   }
 
+  playTrack() {
+    this.props.playTrack(this.props.track)
+  }
   renderDelete() {
     if (this.props.isMine) {
       return (
@@ -54,22 +57,26 @@ class UserTrack extends React.Component {
               <img src={this.props.track.imageURL} className="user-track-image" />
             </Link>
           </div>
-          <div className="track-title-div">
-            <Link
-              to={`/tracks/${this.props.track.id}`}
-              className="track-index-title-link">
-              {this.props.track.title}
-            </Link>
-          </div>
-          <div>
-            <Link to={artistLink}>{artistName}</Link>
-          </div>
-          <div>
-            <button onClick={this.playTrack}>
-              Play Track</button>
-          </div>
-          <div>
-            {this.renderDelete()}
+          <div className="user-track-info">
+            <div className="track-title-div">
+              <Link
+                to={`/tracks/${this.props.track.id}`}
+                className="track-index-title-link">
+                {this.props.track.title}
+              </Link>
+            </div>
+
+            <div>
+              <button onClick={this.playTrack} className="track-play-button">
+                Play Track</button>
+            </div>
+            <div>
+              <button onClick={this.playTrack} className="track-play-button">
+                Add Comment</button>
+            </div>
+            <div>
+              {this.renderDelete()}
+            </div>
           </div>
       </div>
     )

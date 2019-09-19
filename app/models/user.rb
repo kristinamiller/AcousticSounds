@@ -32,6 +32,16 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  validate :ensure_photo
+
+  def ensure_photo
+    unless self.photo.attached?
+      self.photo.attach(io: open('https://acousticsounds-dev.s3-us-west-1.amazonaws.com/dark-guitar.jpg'), filename: 'dark-guitar.jpg')
+      errors[:photo] << "must be attached"
+    end
+  end
+
+
   after_initialize :ensure_session_token
 
   attr_reader :password

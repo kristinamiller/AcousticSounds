@@ -39,6 +39,7 @@ class UserShow extends React.Component {
               artist={this.props.user}
               isMine={this.props.isMine}
               deleteTrack={this.props.deleteTrack}
+              playTrack={this.props.playTrack}
             />
           })}
         </ul>
