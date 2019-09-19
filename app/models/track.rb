@@ -14,8 +14,8 @@
 class Track < ApplicationRecord
   validates :title, :artist_id, presence: true
 
-  # validate :ensure_photo
-  # validate :ensure_audio
+  validate :ensure_photo
+  validate :ensure_audio
 
   has_one_attached :photo
 
@@ -24,6 +24,10 @@ class Track < ApplicationRecord
   belongs_to :artist,
   foreign_key: :artist_id,
   class_name: :User
+
+  has_many :comments,
+  foreign_key: :track_id,
+  class_name: :Comment
 
   def ensure_photo
     unless self.photo.attached?

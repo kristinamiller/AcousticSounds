@@ -26,6 +26,10 @@ class User < ApplicationRecord
   foreign_key: :artist_id,
   class_name: :Track
 
+  has_many :comments,
+  foreign_key: :user_id,
+  class_name: :Comment
+
   has_one_attached :photo
 
   after_initialize :ensure_session_token

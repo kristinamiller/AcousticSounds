@@ -1,16 +1,18 @@
 # == Schema Information
 #
-# Table name: genres
+# Table name: comments
 #
 #  id         :bigint           not null, primary key
-#  name       :string           not null
+#  body       :text             not null
+#  user_id    :integer          not null
+#  track_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class GenreTest < ActiveSupport::TestCase
+class CommentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
