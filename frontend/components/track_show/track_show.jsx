@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentFormContainer from '../comments/comment_form_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 
 class TrackShow extends React.Component {
@@ -18,6 +20,30 @@ class TrackShow extends React.Component {
   componentDidMount() {
     this.props.fetchTrack();
     this.props.fetchUsers();
+    this.props.fetchComments(this.props.match.params.id);
+  }
+
+  renderCommentForm() {
+    if (this.props.currentUser) {
+      return <CommentFormContainer />;
+    }
+  }
+
+  
+
+  renderCommentList() {
+    let ownCommentsArray = [];
+    if (this.props.comments) {
+      this.props.comments.forEach((comment) => {
+        if (comment.track_id === this.props.track.id) {
+          ownCommentsArray.push(comment)
+        }
+      })
+      if (ownCommentsArray.length > 0) {
+        return <CommentIndexContainer />;
+      }
+      
+    }
   }
 
 
@@ -62,11 +88,10 @@ class TrackShow extends React.Component {
           </div>
 
         </div>
-        
 
-        <div>
-          <button onClick={this.playTrack} className="track-play-button">
-            Add Comment</button>
+        <div className="comments-section">
+          {this.renderCommentForm()}
+          {this.renderCommentList()}
         </div>
 
       </div>

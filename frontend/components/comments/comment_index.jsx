@@ -12,7 +12,14 @@ class CommentIndex extends React.Component {
   componentDidMount() {
     this.props.fetchTrack();
     this.props.fetchUsers();
+    this.props.fetchComments(this.props.track);
   }
+
+  renderCommentList() {
+    let ownCommentsArray = this.props.comments.filter((comment) => comment.track_id == this.props.track.id);
+    return ownCommentsArray
+  }
+
 
 
   render() {
@@ -28,8 +35,21 @@ class CommentIndex extends React.Component {
       artistLink = `/${artist.id}/tracks`
     }
     return (
-      <div className="comment-show-container">
-
+      <div className="comment-index-container">
+        <h1>Comments</h1> 
+        <ul>
+          {
+            this.renderCommentList().map((comment) => {
+              return(
+                <div className="comment-item">
+                  {/* <img src={this.props.users[comment.user_id].imageURL}/> */}
+                  <h1>{this.props.users[comment.user_id].display_name}</h1>
+                  <h2>{comment.body}</h2>
+                </div>
+              )
+            })
+          }
+        </ul>
       </div>
     )
   }

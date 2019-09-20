@@ -1,4 +1,5 @@
-import { connect, withRouter } from 'react-redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import React from 'react';
 import CommentForm from './comment_form';
 import { fetchTrack } from '../../actions/track_actions';
@@ -7,14 +8,15 @@ import { createComment, fetchComments, deleteComment } from '../../actions/comme
 
 const msp = (state, ownProps) => ({
   track: state.entities.tracks[ownProps.match.params.id],
-  users: state.entities.users
+  users: state.entities.users,
+  currentUser: state.entities.users[state.session.id]
 })
 
 const mdp = (dispatch, ownProps) => ({
   fetchTrack: () => dispatch(fetchTrack(ownProps.match.params.id)),
   fetchUsers: () => dispatch(fetchUsers()),
-  createComment: (id) => dispatch(createComment(id)),
-  fetchComments: (id) => dispatch(fetchComments(id)),
+  createComment: (comment) => dispatch(createComment(comment)),
+  fetchComments: (track) => dispatch(fetchComments(track)),
   deleteComment: (id) => dispatch(deleteComment(id)),
 })
 

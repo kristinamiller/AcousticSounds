@@ -2,10 +2,13 @@ class Api::CommentsController < ApplicationController
 
    before_action :require_login
 
+   def index
+    @comments = Comment.all
+    render :index
+   end
+
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
-    @comment.link_id = params[:link_id]
     if @comment.save
       render :show
     else
@@ -28,7 +31,7 @@ class Api::CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :user_id, :track_id)
   end
 
 end

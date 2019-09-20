@@ -1,4 +1,5 @@
-import { connect, withRouter } from 'react-redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import React from 'react';
 import CommentIndex from './comment_index';
 import { fetchTrack } from '../../actions/track_actions';
@@ -7,7 +8,8 @@ import { createComment, fetchComments, deleteComment } from '../../actions/comme
 
 const msp = (state, ownProps) => ({
   track: state.entities.tracks[ownProps.match.params.id],
-  users: state.entities.users
+  users: state.entities.users,
+  comments: Object.values(state.entities.comments)
 })
 
 const mdp = (dispatch, ownProps) => ({
