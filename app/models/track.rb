@@ -31,7 +31,6 @@ class Track < ApplicationRecord
 
   def ensure_photo
     unless self.photo.attached?
-      errors[:photo] << "must be attached"
       self.photo.attach(io: open('https://acousticsounds-dev.s3-us-west-1.amazonaws.com/fiddle-closeup.jpg'), filename: 'fiddle-closeup.jpg')
     end
   end

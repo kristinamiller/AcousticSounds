@@ -16,6 +16,8 @@
 #  bio             :text
 #
 
+require 'open-uri'
+
 class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
@@ -37,7 +39,6 @@ class User < ApplicationRecord
   def ensure_photo
     unless self.photo.attached?
       self.photo.attach(io: open('https://acousticsounds-dev.s3-us-west-1.amazonaws.com/dark-guitar.jpg'), filename: 'dark-guitar.jpg')
-      errors[:photo] << "must be attached"
     end
   end
 
