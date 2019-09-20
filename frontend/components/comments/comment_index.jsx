@@ -36,9 +36,7 @@ class CommentIndex extends React.Component {
       artistLink = `/${artist.id}/tracks`
     }
 
-    // if (!ownCommentsArray) {
-    //   return null;
-    // }
+    
 
 
     return (
@@ -47,8 +45,13 @@ class CommentIndex extends React.Component {
         <ul className="comments-ul">
           {
             this.renderCommentList().map((comment) => {
-        
+              if (!this.props.users[comment.user_id].display_name) {
+                return null;
+              }
               return(
+
+
+
                 <div className="comment-item" key={comment.id}>
                   <div className="comment-image-div">
                     <Link to={`/${comment.user_id}/tracks`}><img

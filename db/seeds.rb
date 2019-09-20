@@ -122,6 +122,25 @@ ActiveRecord::Base.transaction do
   track18.photo.attach(io: open('https://acousticsounds-dev.s3-us-west-1.amazonaws.com/elena-banjo.jpg'), filename: 'elena-banjo.jpg')
 
   comment1 = Comment.create!(user_id: user3.id, track_id: track19.id, body: "This girl can sing a house on fire.")
+
+  
+  comment1 = Comment.create!(user_id: user3.id, track_id: track19.id, body: "This girl can sing a house on fire.")
+
+  comment2 = Comment.create!(user_id: user5.id, track_id: track19.id, body: "Equal parts goodness and equal parts sin.")
+
+  comment3 = Comment.create!(user_id: user4.id, track_id: track19.id, body: "While we’re young and resilient, while we’re feeling so fancy free.")
+
+  comment4 = Comment.create!(user_id: user7.id, track_id: track19.id, body: "The pieces of me, she gathers them and gives them back to me in all the right order.")
+
+  comment5 = Comment.create!(user_id: user1.id, track_id: track9.id, body: "Too lonesome to cry.")
+
+  comment6 = Comment.create!(user_id: user6.id, track_id: track9.id, body: "The ebb and flow of tragedy has hardened my heart.")
+
+  comment7 = Comment.create!(user_id: user4.id, track_id: track9.id, body: "Waves keep pounding through the night,  lost without a ray of light.")
+
+  comment8 = Comment.create!(user_id: user5.id, track_id: track9.id, body: "If life is really as short as they say, then why is the night so long?")
+
+
   
 
 
