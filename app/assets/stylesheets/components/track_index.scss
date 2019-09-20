@@ -1,9 +1,11 @@
 .track-index-container {
   display: flex;
   flex-direction: column;
-  margin: 5%;
+  // margin: 5%;
   width: 100%;
   align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .track-index {
@@ -17,6 +19,10 @@
 
 .browse-heading {
   font-size: 24px;
+}
+
+.artists-heading {
+  margin-left: 30px;
 }
 
 .track-index-ul {

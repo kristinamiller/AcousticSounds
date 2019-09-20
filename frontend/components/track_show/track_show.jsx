@@ -78,7 +78,7 @@ class TrackShow extends React.Component {
             </div>
           <div>
               <Link to={artistLink} className="artist-image-link">
-                <img src={artistImage} className="user-show-image" />
+                <img src={artistImage} className="track-show-user-image" />
               </Link>
           </div>
           

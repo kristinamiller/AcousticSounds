@@ -96,8 +96,11 @@ class TrackForm extends React.Component {
         <form className="upload-form" onSubmit={this.handleSubmit}>
           <h1 className="upload-header">Song info</h1>
           <h3 className="upload-errors">{this.renderErrors()}</h3>
+          <div className="upload-left-inputs-right">
+
+          
           <div className="upload-files">
-            <label>Upload Photo
+            <label className="upload-label">Upload Photo
             <input
                 type="file"
                 onChange={this.handlePhoto}
@@ -108,7 +111,7 @@ class TrackForm extends React.Component {
               {preview}
             </div>
             
-            <label>Upload Track
+            <label className="upload-label">Upload Track
             <input
                 type="file"
                 onChange={this.handleAudio}
@@ -152,7 +155,7 @@ class TrackForm extends React.Component {
             </label>
           </div>
             <div className="upload-label">
-              <label>Description:
+              <label>Description
               <textarea
                 value={this.state.description}
                 onChange={this.handleInput('description')}
@@ -161,7 +164,7 @@ class TrackForm extends React.Component {
               />
             </label>
             </div>
-           </div>
+           
           
           
           <div className="upload-buttons">
@@ -172,7 +175,8 @@ class TrackForm extends React.Component {
               className="upload-submit"
             /> 
           </div>
-
+          </div>
+          </div>
         </form>
       </div>
     )

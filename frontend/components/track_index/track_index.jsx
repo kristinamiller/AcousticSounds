@@ -38,7 +38,7 @@ class TrackIndex extends React.Component {
           </div>
         </div>
         <div className="browse-artists">
-          <h1 className="browse-heading">Artists Picked For You</h1>
+          <h1 className="browse-heading artists-heading">Artists Picked For You</h1>
           <ul className="artist-index-item-ul">
             {userSlice.map((user) => {
               return <ArtistIndexItem 

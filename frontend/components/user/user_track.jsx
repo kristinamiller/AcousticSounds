@@ -19,7 +19,8 @@ class UserTrack extends React.Component {
   renderDelete() {
     if (this.props.isMine) {
       return (
-      <button 
+        <div className="add-comment-div">
+          <button className="add-comment-link"
       // onClick={this.props.deleteTrack(this.props.track.id)}
           onClick={() => { 
             if (window.confirm('Are you sure you wish to delete this track?')) {
@@ -29,6 +30,7 @@ class UserTrack extends React.Component {
       >
         Delete Track
         </button>
+        </div>
         )
     } else {
       null;
@@ -50,6 +52,7 @@ class UserTrack extends React.Component {
     return (
       !this.props.artist ? <p>Loading</p> : 
       <div className="user-track-container">
+        <div className="user-track-image-title">
           <div>
             <Link
               to={`/tracks/${this.props.track.id}`}
@@ -58,26 +61,27 @@ class UserTrack extends React.Component {
             </Link>
           </div>
           <div className="user-track-info">
+            <div className="user-show-play-container">
+              <button onClick={this.playTrack} className="user-play-button">
+                &#9654;</button>
+            </div>
             <div className="track-title-div">
               <Link
                 to={`/tracks/${this.props.track.id}`}
-                className="track-index-title-link">
+                className="user-track-title-link">
                 {this.props.track.title}
               </Link>
             </div>
-
-            <div>
-              <button onClick={this.playTrack} className="track-play-button">
-                Play Track</button>
-            </div>
-            <div>
-              <button onClick={this.playTrack} className="track-play-button">
-                Add Comment</button>
-            </div>
-            <div>
-              {this.renderDelete()}
-            </div>
           </div>
+          </div>
+          <div className="add-comment-div">
+              <Link className="add-comment-link" to={`/tracks/${this.props.track.id}`}>Add Comment</Link>
+            
+              {this.renderDelete()}
+            
+            </div>
+            
+          
       </div>
     )
   }

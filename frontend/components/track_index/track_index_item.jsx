@@ -53,7 +53,7 @@ class TrackIndexItem extends React.Component {
           </Link>
         </div>
         <div>
-          <Link to={artistLink}>{artistName}</Link>
+          {/* <Link to={artistLink}>{artistName}</Link> */}
         </div>
         <div className="track-button">
           <button onClick={this.playTrack} className="track-play-button">

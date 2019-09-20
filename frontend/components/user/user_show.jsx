@@ -27,22 +27,28 @@ class UserShow extends React.Component {
 
     return (
       <div className="user-show-container">
-        <div className="user-header">
-          <h2 className="user-show-name">{userName}</h2>
+        <div className="user-show-header">
+          
           <img src={this.props.user.imageURL} className="user-show-image"/>
         </div>
-        <ul className="user-tracks-ul">
-          {this.props.tracks.map((track) => {
-            return <UserTrack
-              key={track.id}
-              track={track}
-              artist={this.props.user}
-              isMine={this.props.isMine}
-              deleteTrack={this.props.deleteTrack}
-              playTrack={this.props.playTrack}
-            />
-          })}
-        </ul>
+        <div className="user-tracks-container">
+          <h2 className="user-show-name">{userName}</h2>
+        
+          <ul className="user-tracks-ul">
+            
+            <h1 className="user-tracks-header">Top Songs</h1>
+            {this.props.tracks.map((track) => {
+              return <UserTrack
+                key={track.id}
+                track={track}
+                artist={this.props.user}
+                isMine={this.props.isMine}
+                deleteTrack={this.props.deleteTrack}
+                playTrack={this.props.playTrack}
+              />
+            })}
+          </ul>
+        </div>
       </div>
     )
   }

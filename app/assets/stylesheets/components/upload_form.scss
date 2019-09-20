@@ -13,6 +13,11 @@
   // flex-direction: row;
 }
 
+.upload-left-inputs-right {
+  display: flex;
+  flex-direction: row;
+}
+
 .upload-files {
 
 }
@@ -22,7 +27,7 @@
   margin: 10px 0px 10px 0px;
   width: 200px;
   height: 200px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   text-align: center;
   color: gray;
   align-items: center;
