@@ -121,7 +121,7 @@ ActiveRecord::Base.transaction do
   track18.audio.attach(io: open('https://acousticsounds-dev.s3-us-west-1.amazonaws.com/elena-only-hope.mp3'), filename: 'elena-only-hope.mp3')
   track18.photo.attach(io: open('https://acousticsounds-dev.s3-us-west-1.amazonaws.com/elena-banjo.jpg'), filename: 'elena-banjo.jpg')
 
-
+  comment1 = Comment.create!(user_id: user3.id, track_id: track19.id, body: "This girl can sing a house on fire.")
   
 
 

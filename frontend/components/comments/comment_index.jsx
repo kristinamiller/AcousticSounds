@@ -35,17 +35,24 @@ class CommentIndex extends React.Component {
       artist.display_name ? artistName = artist.display_name : artistName = artist.email;
       artistLink = `/${artist.id}/tracks`
     }
+
+    // if (!ownCommentsArray) {
+    //   return null;
+    // }
+
+
     return (
       <div className="comment-index-container">
         {/* <h1 className="comments-header">Comments</h1>  */}
         <ul className="comments-ul">
           {
             this.renderCommentList().map((comment) => {
+        
               return(
                 <div className="comment-item" key={comment.id}>
                   <div className="comment-image-div">
                     <Link to={`/${comment.user_id}/tracks`}><img
-                      src={this.props.users[comment.user_id].imageURL}
+                      src={this.props.users[comment.user_id] && this.props.users[comment.user_id].imageURL}
                       className="comments-user-image"
                     /></Link>
                     
@@ -57,6 +64,7 @@ class CommentIndex extends React.Component {
                   
                 </div>
               )
+              
             })
           }
         </ul>
