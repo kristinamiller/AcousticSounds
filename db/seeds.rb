@@ -12,6 +12,7 @@ ActiveRecord::Base.transaction do
 
   User.destroy_all
   Track.destroy_all
+  Comment.destroy_all
 
   user3 = User.create!(email: 'mollytuttle@gmail.com', password: 'fullstack123', display_name: 'Molly Tuttle')
   user3.photo.attach(io: open('https://acousticsounds-dev.s3-us-west-1.amazonaws.com/molly-cool.jpg'), filename: 'molly-cool.jpg')

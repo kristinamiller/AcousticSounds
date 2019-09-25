@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 
-  window.signup = sessionActions.signup;
-  window.login = sessionActions.login;
-  window.logout = sessionActions.logout;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.logoutAjax = SessionApiUtils.logout;
+  // window.signup = sessionActions.signup;
+  // window.login = sessionActions.login;
+  // window.logout = sessionActions.logout;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.logoutAjax = SessionApiUtils.logout;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);
