@@ -14,8 +14,8 @@
 class Track < ApplicationRecord
   validates :title, :artist_id, presence: true
 
-  # validate :ensure_photo
-  # validate :ensure_audio
+  validate :ensure_photo
+  validate :ensure_audio
 
   has_one_attached :photo
 
