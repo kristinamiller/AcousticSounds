@@ -38,12 +38,12 @@ class Greeting extends React.Component {
             <div className="nav-link">
               <Link to="/">Home</Link>
             </div>
-            <div className="nav-link">
+            {/* <div className="nav-link">
               <Link to="/">Stream</Link>
-            </div>
-            <div className="nav-link">
+            </div> */}
+            {/* <div className="nav-link">
               <Link to="/">Library</Link>
-            </div>
+            </div> */}
           </div>
           <div className="nav-items-right">
             <div>
@@ -68,9 +68,9 @@ class Greeting extends React.Component {
             <div className="nav-link">
               <Link to="/">Home</Link>
             </div>
-            <div className="nav-link">
+            {/* <div className="nav-link">
               <Link to="/">Stream</Link>
-            </div>
+            </div> */}
             <div className="nav-link">
               <Link to={`/${this.props.currentUser.id}/tracks`}>Library</Link>
             </div>

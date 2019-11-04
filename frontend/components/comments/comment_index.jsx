@@ -45,7 +45,10 @@ class CommentIndex extends React.Component {
         <ul className="comments-ul">
           {
             this.renderCommentList().map((comment) => {
-              if (!this.props.users[comment.user_id].display_name) {
+              // if (!this.props.users[comment.user_id].display_name) {
+              //   return null;
+              // }
+              if (!this.props.users[comment.user_id]) {
                 return null;
               }
               return(

@@ -17,11 +17,10 @@ const App = () => (
   <div>
     <Modal />
     <header>
-      
       <GreetingContainer />
     </header>
     <Switch>
-      <AuthRoute exact path="/" component={SplashContainer}/>
+      <AuthRoute exact path="/" component={Home}/>
       <ProtectedRoute exact path="/home" component={Home}/>
       <ProtectedRoute exact path="/upload" component={TrackFormContainer}/>
       <Route exact path="/tracks/:id" component={TrackShowContainer}/>
