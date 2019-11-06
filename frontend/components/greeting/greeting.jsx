@@ -27,6 +27,18 @@ class Greeting extends React.Component {
     if (this.props.currentUser) {
       let userName = this.props.currentUser.display_name ? this.props.currentUser.display_name : this.props.currentUser.email;
     }
+
+    const authorLinks = () => (
+      <div class="footer-person">
+        <p class="footer-name">Kristina Miller</p>
+        <div class="footer-icons">
+          <a href="https://github.com/kristinamiller"> <img class="github-logo"
+            src="../assets/images/github-white.png"></img></a>
+          <a href="https://www.linkedin.com/in/kristinafmiller/"> <img class="github-logo"
+            src="../assets/images/linkedin-white.png"></img></a>
+        </div>
+      </div>
+    )
     
     const sessionLinks = () => (
       <div>
@@ -52,6 +64,7 @@ class Greeting extends React.Component {
             <div>
               <button className="create-account" onClick={() => this.openModal('signup')}>Create account</button>
             </div>
+            {/* {authorLinks} */}
           </div>
         </div>
 
@@ -87,6 +100,7 @@ class Greeting extends React.Component {
               Log Out
               </button>
             </div>
+            {/* {authorLinks} */}
           </div>
           
         </div>
