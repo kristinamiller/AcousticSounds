@@ -64,7 +64,15 @@ class Greeting extends React.Component {
             <div>
               <button className="create-account" onClick={() => this.openModal('signup')}>Create account</button>
             </div>
-            {/* {authorLinks} */}
+            <div>
+              {/* <p className="author-name">Kristina Miller</p> */}
+              <div className="author-icons">
+                <a href="https://github.com/kristinamiller/AcousticSounds"> <img className='github-logo'
+                  src='https://kristinamiller.github.io/EarthCycles/assets/images/github-white.png'></img></a>
+                <a href="https://www.linkedin.com/in/kristinafmiller/"> <img className="github-logo"
+                  src="https://kristinamiller.github.io/EarthCycles/assets/images/linkedin-white.png"></img></a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -100,7 +108,12 @@ class Greeting extends React.Component {
               Log Out
               </button>
             </div>
-            {/* {authorLinks} */}
+            <div className="author-icons">
+              <a href="https://github.com/kristinamiller/AcousticSounds"> <img className='github-logo'
+                src='https://kristinamiller.github.io/EarthCycles/assets/images/github-white.png'></img></a>
+              <a href="https://www.linkedin.com/in/kristinafmiller/"> <img className="github-logo"
+                src="https://kristinamiller.github.io/EarthCycles/assets/images/linkedin-white.png"></img></a>
+            </div>
           </div>
           
         </div>
