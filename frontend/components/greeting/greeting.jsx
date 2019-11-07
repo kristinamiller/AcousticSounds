@@ -58,6 +58,9 @@ class Greeting extends React.Component {
             </div> */}
           </div>
           <div className="nav-items-right">
+            <div className="nav-link nav-link-upload">
+              <button className="" onClick={() => this.openModal('signup')}>Upload</button>
+            </div>
             <div>
               <button className="sign-in" onClick={() => this.openModal('login')}>Sign In</button>
             </div>
@@ -67,9 +70,9 @@ class Greeting extends React.Component {
             <div>
               {/* <p className="author-name">Kristina Miller</p> */}
               <div className="author-icons">
-                <a href="https://github.com/kristinamiller/AcousticSounds"> <img className='github-logo'
+                <a href="https://github.com/kristinamiller/AcousticSounds" target="_blank"> <img className='github-logo'
                   src='https://kristinamiller.github.io/EarthCycles/assets/images/github-white.png'></img></a>
-                <a href="https://www.linkedin.com/in/kristinafmiller/"> <img className="github-logo"
+                <a href="https://www.linkedin.com/in/kristinafmiller/" target="_blank"> <img className="github-logo"
                   src="https://kristinamiller.github.io/EarthCycles/assets/images/linkedin-white.png"></img></a>
               </div>
             </div>
@@ -97,10 +100,10 @@ class Greeting extends React.Component {
             </div>
           </div>
           <div className="nav-items-right">
-            <div className="nav-link upload-nav">
+            <div className="nav-link nav-link-upload">
               <Link to="/upload">Upload</Link>
             </div>
-            <div className="nav-link">
+            <div className="nav-link nav-username">
               <Link to={`/${this.props.currentUser.id}/tracks`}>{this.findCurrentUser()}</Link>
             </div>
             <div>
@@ -109,9 +112,9 @@ class Greeting extends React.Component {
               </button>
             </div>
             <div className="author-icons">
-              <a href="https://github.com/kristinamiller/AcousticSounds"> <img className='github-logo'
+              <a href="https://github.com/kristinamiller/AcousticSounds" target="_blank"> <img className='github-logo'
                 src='https://kristinamiller.github.io/EarthCycles/assets/images/github-white.png'></img></a>
-              <a href="https://www.linkedin.com/in/kristinafmiller/"> <img className="github-logo"
+              <a href="https://www.linkedin.com/in/kristinafmiller/" target="_blank"> <img className="github-logo"
                 src="https://kristinamiller.github.io/EarthCycles/assets/images/linkedin-white.png"></img></a>
             </div>
           </div>

@@ -3,8 +3,9 @@
   display: flex;
   justify-content: space-between;
   color: #e5e5e5;
-  font-size: 14px;
-  background: -webkit-linear-gradient(rgb(85, 85, 112), #30303C);
+  font-size: 16px;
+  // background: -webkit-linear-gradient(rgb(85, 85, 112), #30303C);
+  background: #30303C;
   position: fixed;
   top: 0;
   width: 100%;
@@ -27,6 +28,16 @@
 .nav-link {
   padding: 15px 20px 15px 20px;
   border-left: 1px solid black;
+}
+
+.nav-link-upload {
+  border: none;
+  margin-right: 10px;
+  background: rgb(12, 12, 15);
+}
+
+.nav-username {
+  border: none;
 }
 
 .nav-link:hover {
