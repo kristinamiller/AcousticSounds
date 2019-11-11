@@ -47,7 +47,7 @@ class Greeting extends React.Component {
             <div className="nav-link logo-text">
               <Link to="/">AcousticSounds</Link>
             </div>
-            <div className="nav-link">
+            <div className="nav-link home">
               <Link to="/">Home</Link>
             </div>
             {/* <div className="nav-link">
@@ -89,7 +89,7 @@ class Greeting extends React.Component {
             <div className="nav-link logo-text">
               <Link to="/">AcousticSounds</Link>
             </div>
-            <div className="nav-link">
+            <div className="nav-link home">
               <Link to="/">Home</Link>
             </div>
             {/* <div className="nav-link">

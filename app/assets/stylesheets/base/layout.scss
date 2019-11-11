@@ -23,8 +23,30 @@ textarea:focus {
   border-radius: 5px;
 }
 
+@media only screen and (max-width: 400px) {
+  body {
+    background-color: #F09A9D; /* Red */
+  }
+}
 
+@media screen and (max-width: 680px) {
+    body {
+    background-color: green; /* Red */
+  }
+}
 
-
-
-
+@media (hover) {
+    .can-i-hover::after {
+        content: "You look like you can hover.";    
+    } 
+    
+}
+//////////!!!this works!!
+// @media (orientation: portrait) {
+//     .can-i-hover::after {
+//         content: "I don't think you can hover.";    
+//     } 
+//   //   body {
+//   //     font-size: 50px;
+//   // }
+// }
