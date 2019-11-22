@@ -1,14 +1,8 @@
 import React from 'react';
 import UserTrack from './user_track'
 
-// add logic to see if current user from session matches user id in ownProps
 
 class UserShow extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-  }
 
   componentDidMount() {
     this.props.fetchTracks();

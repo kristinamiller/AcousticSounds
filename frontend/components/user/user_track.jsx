@@ -39,8 +39,7 @@ class UserTrack extends React.Component {
       <div className="user-track-container">
         <div className="user-track-image-title">
           <div>
-            <Link
-              to={`/tracks/${this.props.track.id}`}
+            <Link to={`/tracks/${this.props.track.id}`}
               className="track-index-image-link">
               <img src={this.props.track.imageURL} className="user-track-image" />
             </Link>
@@ -51,8 +50,7 @@ class UserTrack extends React.Component {
                 &#9654;</button>
             </div>
             <div className="track-title-div">
-              <Link
-                to={`/tracks/${this.props.track.id}`}
+              <Link to={`/tracks/${this.props.track.id}`}
                 className="user-track-title-link">
                 {this.props.track.title}
               </Link>
