@@ -1,5 +1,5 @@
 import React from 'react';
-import UserTrack from './user_track'
+import UserTrack from './user_track';
 
 
 class UserShow extends React.Component {

@@ -21,14 +21,6 @@ class TrackIndexItem extends React.Component {
       artistLink = `/${this.props.artist.id}/tracks`
     }
 
-
-    // let artistLink = "";
-    // if (!this.props.user) {
-    //   <p>Loading</p>
-    // } else {
-    //   let artistName = this.props.artist.display_name ? this.props.artist.display_name : this.props.artist.email;
-    //   artistLink = <Link to='/' className="track-index-artist-name">{artistName}</Link>
-    // }
     return(
       <li className="track-index-item-li">
         <div>
